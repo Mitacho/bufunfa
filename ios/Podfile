@@ -12,6 +12,8 @@ target 'Bufunfa' do
     :hermes_enabled => false
   )
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'BufunfaTests' do
     inherit! :complete
     # Pods for testing
