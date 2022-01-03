@@ -35,8 +35,9 @@ const light: Theme = {
     buttonTertiary: palette.purplePrimary,
   },
   spacing: {
-    s: 8,
-    m: 16,
+    xs: 8,
+    s: 16,
+    m: 20,
     l: 24,
     xl: 40,
   },

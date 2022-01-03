@@ -6,6 +6,7 @@ export type Palette = {
 
 export type Spacing = {
   s: number;
+  xs: number;
   m: number;
   l: number;
   xl: number;
