@@ -20,10 +20,6 @@ export default function HomeScreen({ navigation }: Props): JSX.Element {
   return (
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
-      <StatusBar
-        barStyle={theme.colors.statusBarContent}
-        backgroundColor={theme.colors.statusBar}
-      />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View
           style={[
