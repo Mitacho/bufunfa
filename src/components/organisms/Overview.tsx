@@ -10,7 +10,7 @@ type Props = {};
 function Overview(props: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
   return (
-    <View style={[styles.overview, { marginHorizontal: theme.spacing.l }]}>
+    <View style={[styles.overview, { marginHorizontal: theme.spacing.m }]}>
       <BalanceCard amount={3000} />
       <AmountCard type="income" amount={1800.49} title="Entradas" />
       <AmountCard type="expense" amount={1.5} title="Saídas" />

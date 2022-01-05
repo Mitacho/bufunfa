@@ -24,7 +24,7 @@ export default function HomeScreen({ navigation }: Props): JSX.Element {
         <View
           style={[
             {
-              padding: theme.spacing.l,
+              padding: theme.spacing.m,
             },
           ]}>
           <Greetings onNavigate={handleNavigateToProfile} />
