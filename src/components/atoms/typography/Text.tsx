@@ -28,15 +28,12 @@ function Text({
     [],
   );
 
-  const memoizedFontSize = useMemo(
-    () => ({
-      s: theme.fontSize.s,
-      m: theme.fontSize.m,
-      l: theme.fontSize.l,
-      xl: theme.fontSize.xl,
-    }),
-    [],
-  );
+  const memoizedFontSize = {
+    s: theme.fontSize.s,
+    m: theme.fontSize.m,
+    l: theme.fontSize.l,
+    xl: theme.fontSize.xl,
+  };
 
   return (
     <TextBase
