@@ -15,7 +15,7 @@ type Props = {
   amount: number;
 };
 
-const CIRCLE_COLOR_OPACITY = "40";
+const CIRCLE_COLOR_OPACITY = "aa";
 
 function AmountCard({ amount }: Props) {
   const { theme } = useContext(ThemeContext);

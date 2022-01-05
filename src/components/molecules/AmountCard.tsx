@@ -30,7 +30,7 @@ const getIcon = {
   debt: DonateIcon,
 };
 
-const CIRCLE_COLOR_OPACITY = "40";
+const CIRCLE_COLOR_OPACITY = "aa";
 
 function AmountCard({ amount, title, type }: Props) {
   const { theme } = useContext(ThemeContext);
