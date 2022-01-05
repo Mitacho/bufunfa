@@ -1,4 +1,4 @@
-import React, { memo, useContext, useMemo } from "react";
+import React, { memo, useContext } from "react";
 import { StyleSheet, View } from "react-native";
 
 import { Card } from "@components/atoms/card";
@@ -13,6 +13,7 @@ import {
   CreditCardIcon,
   SavingIcon,
 } from "@assets/icons";
+import Circle from "@components/atoms/Circle";
 
 type CardType = "income" | "expense" | "receive" | "debt";
 
@@ -29,27 +30,39 @@ const getIcon = {
   debt: DonateIcon,
 };
 
+const CIRCLE_COLOR_OPACITY = "40";
+
 function AmountCard({ amount, title, type }: Props) {
   const { theme } = useContext(ThemeContext);
 
-  const memoizedGetColor = useMemo(
-    () => ({
-      income: theme.colors.beige,
-      expense: theme.colors.purple,
-      receive: theme.colors.green,
-      debt: theme.colors.orange,
-    }),
-    [],
-  );
+  const getColor = {
+    income: theme.colors.cardIncome,
+    expense: theme.colors.cardExpense,
+    receive: theme.colors.cardToReceive,
+    debt: theme.colors.cardDebt,
+  };
+
+  const getCircleColor = {
+    income: theme.colors.beige + CIRCLE_COLOR_OPACITY,
+    expense: theme.colors.purple + CIRCLE_COLOR_OPACITY,
+    receive: theme.colors.green + CIRCLE_COLOR_OPACITY,
+    debt: theme.colors.orange + CIRCLE_COLOR_OPACITY,
+  };
 
   return (
     <Card
-      color={memoizedGetColor[type]}
+      color={getColor[type]}
       style={{ flexDirection: "row", marginVertical: theme.spacing.xs }}>
       <View style={[styles.cardHeader, { marginRight: theme.spacing.s }]}>
+        <Circle
+          height={36}
+          width={36}
+          style={styles.circle}
+          color={getCircleColor[type]}
+        />
         <Icon
           svg={getIcon[type]}
-          fill={theme.colors.cardText}
+          fill={theme.colors.cardIcon}
           height={40}
           width={40}
         />
@@ -63,7 +76,7 @@ function AmountCard({ amount, title, type }: Props) {
           }).format(amount)}
           weight="medium"
           fontSize="l"
-          color={theme.colors.cardText}
+          color={theme.colors.cardAmount}
           numberOfLines={1}
         />
       </View>
@@ -76,9 +89,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    position: "relative",
   },
   amount: {
     flex: 1,
+  },
+  circle: {
+    position: "absolute",
+    left: -6,
   },
 });
 

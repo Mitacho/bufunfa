@@ -18,7 +18,7 @@ function Card({ children, style, color }: Props) {
       style={[
         {
           padding: theme.spacing.m,
-          backgroundColor: color || theme.colors.blue,
+          backgroundColor: color || theme.colors.cardBalance,
           width: "100%",
           borderRadius: 8,
         },

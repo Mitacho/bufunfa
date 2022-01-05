@@ -31,6 +31,13 @@ export type Colors = {
   red: string;
   text: string;
   cardText: string;
+  cardAmount: string;
+  cardIcon: string;
+  cardBalance: string;
+  cardIncome: string;
+  cardExpense: string;
+  cardToReceive: string;
+  cardDebt: string;
   grayPrimary: string;
   graySecondary: string;
   buttonPrimary: string;
