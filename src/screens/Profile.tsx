@@ -1,8 +1,9 @@
 import React, { useContext, useCallback } from "react";
-import { SafeAreaView, StatusBar, ScrollView, View, Text } from "react-native";
+import { SafeAreaView, ScrollView, View, Text } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 import { Button } from "@components/atoms/button";
+import { Input } from "@components/atoms/input";
 
 export default function ProfileScreen(): JSX.Element {
   const { theme, handleChangeTheme } = useContext(ThemeContext);
@@ -15,13 +16,9 @@ export default function ProfileScreen(): JSX.Element {
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View
-          style={[
-            {
-              padding: theme.spacing.l,
-            },
-          ]}>
+        <View style={[{ padding: theme.spacing.l }]}>
           <Text>Perfil</Text>
+          <Input />
           <Button
             color={theme.colors.buttonPrimary}
             onPress={onPressChangeTheme}

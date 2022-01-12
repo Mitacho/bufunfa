@@ -1,5 +1,5 @@
 import React, { useContext, useCallback } from "react";
-import { SafeAreaView, StatusBar, ScrollView, View } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { Greetings } from "@components/molecules";
 import Overview from "@components/organisms/Overview";
@@ -21,12 +21,7 @@ export default function HomeScreen({ navigation }: Props): JSX.Element {
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View
-          style={[
-            {
-              padding: theme.spacing.m,
-            },
-          ]}>
+        <View style={[{ padding: theme.spacing.m }]}>
           <Greetings onNavigate={handleNavigateToProfile} />
         </View>
         <Overview />
