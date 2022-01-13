@@ -13,6 +13,7 @@ const palette: Palette = {
   grayPrimary: "#BDC1C6",
   graySecondary: "#949494",
   purplePrimary: "#E2D5FE",
+  lightGray: "#f0f0f0",
 };
 
 const light: Theme = {
@@ -28,6 +29,8 @@ const light: Theme = {
     orange: palette.orange,
     red: palette.red,
     text: palette.black,
+    textInput: palette.black,
+    input: palette.lightGray,
     cardText: palette.black,
     cardIcon: palette.dark,
     cardAmount: palette.black,

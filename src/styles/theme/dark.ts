@@ -29,6 +29,8 @@ const dark: Theme = {
     orange: palette.orange,
     red: palette.red,
     text: palette.black,
+    textInput: palette.black,
+    input: palette.blackSecondary,
     cardText: palette.grayPrimary,
     cardIcon: palette.grayPrimary,
     cardAmount: palette.whiteSecondary,

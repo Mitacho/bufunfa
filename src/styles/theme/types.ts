@@ -24,12 +24,14 @@ export type Colors = {
   statusBarContent: StatusBarStyle | null | undefined;
   background: string;
   blue: string;
+  input: string;
   beige: string;
   purple: string;
   green: string;
   orange: string;
   red: string;
   text: string;
+  textInput: string;
   cardText: string;
   cardAmount: string;
   cardIcon: string;
