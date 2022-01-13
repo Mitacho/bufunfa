@@ -70,10 +70,8 @@ function AmountCard({ amount, title, type }: Props) {
       <View style={[styles.amount]}>
         <Text text={title} fontSize="m" color={theme.colors.cardText} />
         <Text
-          text={Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(amount)}
+          text={amount}
+          currency
           weight="medium"
           fontSize="l"
           color={theme.colors.cardAmount}

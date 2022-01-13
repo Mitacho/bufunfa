@@ -5,14 +5,16 @@ import { ThemeContext } from "@styles/theme/context";
 import type { TextProps } from "react-native";
 
 type Props = TextProps & {
-  text: string;
+  text: string | number;
   color?: string;
+  currency?: boolean;
   weight?: "normal" | "medium";
   fontSize?: "s" | "m" | "l" | "xl";
 };
 
 function Text({
   text,
+  currency,
   weight = "normal",
   fontSize = "m",
   color,
@@ -45,7 +47,12 @@ function Text({
           fontFamily: memoizedFontWeight[weight],
         },
       ]}>
-      {text}
+      {currency
+        ? Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(parseFloat(String(text)))
+        : text}
     </TextBase>
   );
 }

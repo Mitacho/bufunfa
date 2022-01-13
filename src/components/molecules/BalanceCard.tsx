@@ -48,10 +48,8 @@ function AmountCard({ amount }: Props) {
           },
         ]}>
         <Text
-          text={Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-          }).format(amount)}
+          text={amount}
+          currency
           weight="medium"
           fontSize="l"
           color={theme.colors.cardAmount}
