@@ -1,9 +1,9 @@
 import React, { useContext, useCallback } from "react";
-import { SafeAreaView, ScrollView, View, Text } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 import { Button } from "@components/atoms/button";
-import { Input } from "@components/atoms/input";
+import { InputField } from "@components/molecules/form";
 
 export default function ProfileScreen(): JSX.Element {
   const { theme, handleChangeTheme } = useContext(ThemeContext);
@@ -17,8 +17,7 @@ export default function ProfileScreen(): JSX.Element {
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={[{ padding: theme.spacing.l }]}>
-          <Text>Perfil</Text>
-          <Input />
+          <InputField placeholder="Como você se chama ?" />
           <Button
             color={theme.colors.buttonPrimary}
             onPress={onPressChangeTheme}
