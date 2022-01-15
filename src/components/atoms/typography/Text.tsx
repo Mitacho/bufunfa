@@ -2,7 +2,7 @@ import React, { memo, useMemo, useContext } from "react";
 import { Text as TextBase } from "react-native";
 import { ThemeContext } from "@styles/theme/context";
 
-import type { TextProps } from "react-native";
+import type { TextStyle, TextProps } from "react-native";
 
 type Props = TextProps & {
   text: string | number;
@@ -10,6 +10,7 @@ type Props = TextProps & {
   currency?: boolean;
   weight?: "normal" | "medium";
   fontSize?: "s" | "m" | "l" | "xl";
+  textTransform?: TextStyle["textTransform"];
 };
 
 function Text({
@@ -18,6 +19,7 @@ function Text({
   weight = "normal",
   fontSize = "m",
   color,
+  textTransform,
   ...props
 }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
@@ -45,6 +47,7 @@ function Text({
           color: color || theme.colors.text,
           fontSize: memoizedFontSize[fontSize],
           fontFamily: memoizedFontWeight[weight],
+          textTransform,
         },
       ]}>
       {currency
