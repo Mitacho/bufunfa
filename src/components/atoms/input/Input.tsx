@@ -1,17 +1,18 @@
-import React, { memo, useRef, useState, useCallback, useContext } from "react";
+import React, { memo, useState, useCallback, useContext } from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 
-type Props = {};
+import type { ColorValue } from "react-native";
 
-function Input(props: Props): JSX.Element {
+type Props = {
+  placeholder?: string | undefined;
+  placeholderTextColor?: ColorValue | undefined;
+};
+
+function Input({ placeholder, placeholderTextColor }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
   const [text, setText] = useState("");
-
-  const renders = useRef<number>(0);
-
-  console.log(renders.current++);
 
   const handleChangeText = useCallback(text => setText(text), []);
 
@@ -28,6 +29,8 @@ function Input(props: Props): JSX.Element {
       ]}
       value={text}
       onChangeText={handleChangeText}
+      placeholder={placeholder}
+      placeholderTextColor={placeholderTextColor || theme.colors.placeholder}
     />
   );
 }
