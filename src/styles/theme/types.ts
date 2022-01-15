@@ -32,6 +32,9 @@ export type Colors = {
   red: string;
   text: string;
   textInput: string;
+  textSecondary: string;
+  label: string;
+  placeholder: string;
   cardText: string;
   cardAmount: string;
   cardIcon: string;
