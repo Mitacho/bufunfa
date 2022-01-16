@@ -44,10 +44,10 @@ function AmountCard({ amount, title, type }: Props) {
   };
 
   const getCircleColor = {
-    income: theme.colors.beige + CIRCLE_COLOR_OPACITY,
-    expense: theme.colors.purple + CIRCLE_COLOR_OPACITY,
-    receive: theme.colors.green + CIRCLE_COLOR_OPACITY,
-    debt: theme.colors.orange + CIRCLE_COLOR_OPACITY,
+    income: theme.colors.beige,
+    expense: theme.colors.purple,
+    receive: theme.colors.green,
+    debt: theme.colors.orange,
   };
 
   return (
@@ -58,7 +58,7 @@ function AmountCard({ amount, title, type }: Props) {
         <ColoredCircleIcon
           icon={type}
           circleSize={36}
-          circleColor={getCircleColor[type]}
+          circleColor={getCircleColor[type] + CIRCLE_COLOR_OPACITY}
         />
       </View>
       <View style={[styles.amount]}>
