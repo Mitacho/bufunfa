@@ -3,7 +3,6 @@ import { StyleSheet, View } from "react-native";
 
 import { Card } from "@components/atoms/card";
 import { Text } from "@components/atoms/typography";
-import Icon from "@components/atoms/Icon";
 import { ColoredCircleIcon } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
@@ -14,7 +13,6 @@ import {
   CreditCardIcon,
   SavingIcon,
 } from "@assets/icons";
-import Circle from "@components/atoms/Circle";
 
 type CardType = "income" | "expense" | "receive" | "debt";
 
