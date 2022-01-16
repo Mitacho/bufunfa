@@ -13,6 +13,7 @@ const palette: Palette = {
   red: "#d17777",
   grayPrimary: "#BDC1C6",
   graySecondary: "#949494",
+  grayTertiary: "#5f6368",
   purplePrimary: "#C3B3E7",
 };
 
@@ -31,7 +32,7 @@ const dark: Theme = {
     text: palette.black,
     textInput: palette.black,
     textSecondary: palette.grayPrimary,
-    placeholder: palette.graySecondary,
+    placeholder: palette.grayTertiary,
     label: palette.grayPrimary,
     input: palette.blackSecondary,
     cardText: palette.grayPrimary,
