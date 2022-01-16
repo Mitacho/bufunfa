@@ -23,6 +23,7 @@ module.exports = {
           "@assets": "./src/assets",
           "@styles": "./src/styles",
           "@settings": "./src/settings",
+          "@context": "./src/context",
         },
       },
     ],

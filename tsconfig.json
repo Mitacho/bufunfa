@@ -50,7 +50,9 @@
       "@settings/*": ["./src/settings/*"],
       "@types": ["./src/types"],
       "@assets": ["./src/assets"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@context": ["./src/context"],
+      "@context/*": ["./src/context/*"]
     },
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */

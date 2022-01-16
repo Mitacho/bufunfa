@@ -10,6 +10,8 @@ type Props = {
   placeholder?: string;
   placeholderTextColor?: ColorValue | undefined;
   textTransformLabel?: TextStyle["textTransform"];
+  value?: string;
+  onChangeText?: (text: string) => void;
 };
 
 function InputField({
@@ -17,6 +19,8 @@ function InputField({
   textTransformLabel,
   placeholderTextColor,
   placeholder,
+  value,
+  onChangeText,
 }: Props): JSX.Element {
   return (
     <FormControl>
@@ -26,6 +30,8 @@ function InputField({
       <Input
         placeholder={placeholder}
         placeholderTextColor={placeholderTextColor}
+        value={value}
+        onChangeText={onChangeText}
       />
     </FormControl>
   );
