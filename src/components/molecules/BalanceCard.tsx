@@ -24,7 +24,7 @@ function AmountCard({ amount }: Props) {
         />
         <ColoredCircleIcon
           icon="wallet"
-          circleColor={theme.colors.blue}
+          circleColor={theme.colors.blue + "aa"}
           variant="right"
         />
       </View>
