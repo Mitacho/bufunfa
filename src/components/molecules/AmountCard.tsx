@@ -4,6 +4,7 @@ import { StyleSheet, View } from "react-native";
 import { Card } from "@components/atoms/card";
 import { Text } from "@components/atoms/typography";
 import Icon from "@components/atoms/Icon";
+import { ColoredCircleIcon } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
 
@@ -54,17 +55,10 @@ function AmountCard({ amount, title, type }: Props) {
       color={getColor[type]}
       style={{ flexDirection: "row", marginVertical: theme.spacing.xs }}>
       <View style={[styles.cardHeader, { marginRight: theme.spacing.s }]}>
-        <Circle
-          height={36}
-          width={36}
-          style={styles.circle}
-          color={getCircleColor[type]}
-        />
-        <Icon
-          svg={getIcon[type]}
-          fill={theme.colors.cardIcon}
-          height={40}
-          width={40}
+        <ColoredCircleIcon
+          icon={type}
+          circleSize={36}
+          circleColor={getCircleColor[type]}
         />
       </View>
       <View style={[styles.amount]}>

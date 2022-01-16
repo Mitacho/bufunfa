@@ -3,19 +3,14 @@ import { StyleSheet, View } from "react-native";
 
 import { Card } from "@components/atoms/card";
 import { Text } from "@components/atoms/typography";
-import Circle from "@components/atoms/Circle";
-
-import Icon from "@components/atoms/Icon";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import { WalletIcon } from "@assets/icons";
+import { ColoredCircleIcon } from "@components/molecules";
 
 type Props = {
   amount: number;
 };
-
-const CIRCLE_COLOR_OPACITY = "aa";
 
 function AmountCard({ amount }: Props) {
   const { theme } = useContext(ThemeContext);
@@ -27,17 +22,10 @@ function AmountCard({ amount }: Props) {
           fontSize="m"
           color={theme.colors.cardText}
         />
-        <Circle
-          height={40}
-          width={40}
-          style={styles.circle}
-          color={theme.colors.blue + CIRCLE_COLOR_OPACITY}
-        />
-        <Icon
-          svg={WalletIcon}
-          fill={theme.colors.cardIcon}
-          height={40}
-          width={40}
+        <ColoredCircleIcon
+          icon="wallet"
+          circleColor={theme.colors.blue}
+          variant="right"
         />
       </View>
       <View
@@ -69,10 +57,6 @@ const styles = StyleSheet.create({
   },
   amount: {
     justifyContent: "center",
-  },
-  circle: {
-    position: "absolute",
-    right: 10,
   },
 });
 
