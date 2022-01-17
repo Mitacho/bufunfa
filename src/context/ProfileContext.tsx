@@ -1,4 +1,5 @@
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 type ProfileContextData = {
   name: string;
@@ -31,14 +32,30 @@ export default function ProfileProvider({ children }: Props): JSX.Element {
     }, 3000);
   }, []);
 
-  const saveUsername = useCallback((name: string) => {
+  const saveUsername = useCallback(async (name: string) => {
     try {
-      console.log(`Usuário salvo com sucesso: ${name}`);
+      await AsyncStorage.setItem("@name", name);
 
       clearTimeout(saveTimeout);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
+  }, []);
+
+  const getUsername = useCallback(async () => {
+    try {
+      const username = await AsyncStorage.getItem("@name");
+
+      if (username) {
+        setName(username);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    getUsername();
   }, []);
 
   return (
