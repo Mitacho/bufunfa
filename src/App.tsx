@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "react-native";
 
-import { HomeScreen, ProfileScreen } from "@screens";
+import { HomeScreen, NewTransactionScreen, ProfileScreen } from "@screens";
 
 import { ThemeContext } from "@styles/theme/context";
 
@@ -26,6 +26,7 @@ export default function App(): JSX.Element {
         }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="NewTransaction" component={NewTransactionScreen} />
       </Stack.Navigator>
     </>
   );
