@@ -5,12 +5,11 @@ import { Greetings } from "@components/molecules";
 import Overview from "@components/organisms/Overview";
 import { ThemeContext } from "@styles/theme/context";
 
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { StackParamList } from "@types";
+import type { ScreenProps } from "@types";
 
-type Props = NativeStackScreenProps<StackParamList, "Home">;
-
-export default function HomeScreen({ navigation }: Props): JSX.Element {
+export default function HomeScreen({
+  navigation,
+}: ScreenProps<"Home">): JSX.Element {
   const { theme } = useContext(ThemeContext);
 
   const handleNavigateToProfile = useCallback(() => {

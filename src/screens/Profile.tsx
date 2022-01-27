@@ -7,7 +7,9 @@ import { InputField } from "@components/molecules/form";
 import { ThemeContext } from "@styles/theme/context";
 import { ProfileContext } from "@context/ProfileContext";
 
-export default function ProfileScreen(): JSX.Element {
+import type { ScreenProps } from "@types";
+
+export default function ProfileScreen({}: ScreenProps<"Profile">): JSX.Element {
   const { theme, handleChangeTheme } = useContext(ThemeContext);
   const { name, handleChangeName } = useContext(ProfileContext);
 
