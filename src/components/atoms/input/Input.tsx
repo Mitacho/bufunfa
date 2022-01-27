@@ -3,9 +3,9 @@ import { StyleSheet, TextInput } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { ColorValue } from "react-native";
+import type { ColorValue, TextInputProps } from "react-native";
 
-type Props = {
+type Props = TextInputProps & {
   placeholder?: string | undefined;
   placeholderTextColor?: ColorValue | undefined;
   value?: string;
@@ -17,6 +17,7 @@ function Input({
   placeholderTextColor,
   value,
   onChangeText,
+  ...props
 }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
 
@@ -29,12 +30,16 @@ function Input({
           backgroundColor: theme.colors.input,
           color: theme.colors.textInput,
           fontSize: theme.fontSize.m,
+          height: !props.multiline ? 60 : undefined,
+          textAlignVertical: !props.multiline ? "center" : "top",
         },
+        props.style,
       ]}
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
       placeholderTextColor={placeholderTextColor || theme.colors.placeholder}
+      {...props}
     />
   );
 }
@@ -42,11 +47,9 @@ function Input({
 const styles = StyleSheet.create({
   text: {
     fontFamily: "Poppins",
-    textAlignVertical: "center",
   },
   input: {
     width: "100%",
-    height: 60,
     borderRadius: 4,
   },
 });

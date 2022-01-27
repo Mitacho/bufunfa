@@ -3,9 +3,9 @@ import { View } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { StyleProp, ViewStyle } from "react-native";
+import type { StyleProp, ViewStyle, ViewProps } from "react-native";
 
-type Props = {
+type Props = ViewProps & {
   children?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
   color?: string;
