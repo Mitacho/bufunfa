@@ -1,12 +1,7 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
-interface Props {
-  svg: string;
-  fill?: string;
-  height?: number;
-  width?: number;
-}
+import type { Props } from "./Icon.types";
 
 export default function Icon({
   svg,

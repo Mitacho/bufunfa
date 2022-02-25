@@ -1,16 +1,10 @@
 import React, { useContext } from "react";
 
-import { Text } from "@components/atoms/typography";
+import { Text } from "@components/atoms";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { TextStyle } from "react-native";
-
-type Props = {
-  label: string;
-  uppercase?: boolean;
-  textTransform?: TextStyle["textTransform"];
-};
+import type { Props } from "./FormLabel.types";
 
 function FormLabel({ label, textTransform }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);

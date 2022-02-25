@@ -1,12 +1,7 @@
 import React, { memo } from "react";
 import { View } from "react-native";
 
-import type { StyleProp, ViewStyle } from "react-native";
-
-type Props = {
-  children?: React.ReactNode;
-  style?: StyleProp<ViewStyle>;
-};
+import type { Props } from "./FormControl.types";
 
 function FormControl({ children, style }: Props): JSX.Element {
   return <View style={[style]}>{children}</View>;

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import { StyleSheet, View } from "react-native";
-import Icon from "@components/atoms/Icon";
-import Circle from "@components/atoms/Circle";
+import { View } from "react-native";
+import { Icon, Circle } from "@components/atoms";
 
 import { ThemeContext } from "@styles/theme/context";
 
@@ -13,16 +12,9 @@ import {
   WalletIcon,
 } from "@assets/icons";
 
-type IconType = "income" | "expense" | "receive" | "debt" | "wallet";
-type IconVariant = "right" | "left";
-type Props = {
-  icon: IconType;
-  variant?: IconVariant;
-  circleSize?: number;
-  circleColor: string;
-  iconSize?: number;
-  iconColor?: string;
-};
+import styles from "./ColoredCircleIcon.styles";
+
+import type { Props } from "./ColoredCircleIcon.types";
 
 const getIcon = {
   income: SavingIcon,
@@ -67,21 +59,5 @@ function ColoredCircleIcon({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  circleLeft: {
-    position: "absolute",
-    left: -6,
-  },
-  circleRight: {
-    position: "absolute",
-    right: 10,
-  },
-});
 
 export default ColoredCircleIcon;

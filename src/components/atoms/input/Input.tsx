@@ -1,16 +1,11 @@
 import React, { memo, useContext } from "react";
-import { StyleSheet, TextInput } from "react-native";
+import { TextInput } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { ColorValue, TextInputProps } from "react-native";
+import type { Props } from "./Input.types";
 
-type Props = TextInputProps & {
-  placeholder?: string | undefined;
-  placeholderTextColor?: ColorValue | undefined;
-  value?: string;
-  onChangeText?: (text: string) => void;
-};
+import styles from "./Input.styles";
 
 function Input({
   placeholder,
@@ -43,15 +38,5 @@ function Input({
     />
   );
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: "Poppins",
-  },
-  input: {
-    width: "100%",
-    borderRadius: 4,
-  },
-});
 
 export default memo(Input);

@@ -2,7 +2,7 @@ import React, { useContext, useCallback } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { Greetings } from "@components/molecules";
-import Overview from "@components/organisms/Overview";
+import { Overview } from "@components/organisms";
 import { ThemeContext } from "@styles/theme/context";
 
 import type { ScreenProps } from "@types";

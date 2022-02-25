@@ -1,16 +1,15 @@
 import React, { memo, useContext } from "react";
-import { StyleSheet, View } from "react-native";
-import BalanceCard from "@components/molecules/BalanceCard";
-import AmountCard from "@components/molecules/AmountCard";
+import { View } from "react-native";
+import { BalanceCard, AmountCard } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
 
-type Props = {};
+import type { Props } from "./Overview.types";
 
 function Overview(props: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
   return (
-    <View style={[styles.overview, { marginHorizontal: theme.spacing.m }]}>
+    <View style={[{ marginHorizontal: theme.spacing.m }]}>
       <BalanceCard amount={3000} />
       <AmountCard type="income" amount={1800.49} title="Entradas" />
       <AmountCard type="expense" amount={1.5} title="Saídas" />
@@ -19,9 +18,5 @@ function Overview(props: Props): JSX.Element {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  overview: {},
-});
 
 export default memo(Overview);

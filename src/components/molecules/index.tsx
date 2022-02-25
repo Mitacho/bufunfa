@@ -1,2 +1,4 @@
-export { default as ColoredCircleIcon } from "./ColoredCircleIcon";
-export { default as Greetings } from "./Greetings";
+export { ColoredCircleIcon } from "./icons";
+export { Greetings } from "./greetings";
+export { InputField, FormLabel } from "./form";
+export { AmountCard, BalanceCard } from "./cards";

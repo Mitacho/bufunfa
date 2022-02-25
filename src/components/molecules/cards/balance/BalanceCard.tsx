@@ -1,16 +1,15 @@
 import React, { memo, useContext } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
-import { Card } from "@components/atoms/card";
-import { Text } from "@components/atoms/typography";
+import { Card, Text } from "@components/atoms";
 
 import { ThemeContext } from "@styles/theme/context";
 
 import { ColoredCircleIcon } from "@components/molecules";
 
-type Props = {
-  amount: number;
-};
+import styles from "./BalanceCard.styles";
+
+import type { Props } from "./BalanceCard.types";
 
 function AmountCard({ amount }: Props) {
   const { theme } = useContext(ThemeContext);
@@ -47,17 +46,5 @@ function AmountCard({ amount }: Props) {
     </Card>
   );
 }
-
-const styles = StyleSheet.create({
-  cardHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    position: "relative",
-  },
-  amount: {
-    justifyContent: "center",
-  },
-});
 
 export default memo(AmountCard);

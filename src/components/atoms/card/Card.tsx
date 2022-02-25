@@ -3,13 +3,7 @@ import { View } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { StyleProp, ViewStyle, ViewProps } from "react-native";
-
-type Props = ViewProps & {
-  children?: React.ReactNode;
-  style?: StyleProp<ViewStyle>;
-  color?: string;
-};
+import type { Props } from "./Card.types";
 
 function Card({ children, style, color }: Props) {
   const { theme } = useContext(ThemeContext);

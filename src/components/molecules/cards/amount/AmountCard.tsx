@@ -1,22 +1,16 @@
 import React, { memo, useCallback, useContext } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { Card } from "@components/atoms/card";
-import { Text } from "@components/atoms/typography";
+import { Card, Text } from "@components/atoms";
 import { ColoredCircleIcon } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
 
 import type { NavigationScreenProps } from "@types";
+import type { Props } from "./AmountCard.types";
 
-type CardType = "income" | "expense" | "receive" | "debt";
-
-type Props = {
-  type: CardType;
-  title: string;
-  amount: number;
-};
+import styles from "./AmountCard.styles";
 
 const CIRCLE_COLOR_OPACITY = "aa";
 
@@ -69,21 +63,5 @@ function AmountCard({ amount, title, type }: Props) {
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-  cardHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    position: "relative",
-  },
-  amount: {
-    flex: 1,
-  },
-  circle: {
-    position: "absolute",
-    left: -6,
-  },
-});
 
 export default memo(AmountCard);

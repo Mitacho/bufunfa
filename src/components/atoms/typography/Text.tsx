@@ -2,16 +2,7 @@ import React, { memo, useMemo, useContext } from "react";
 import { Text as TextBase } from "react-native";
 import { ThemeContext } from "@styles/theme/context";
 
-import type { TextStyle, TextProps } from "react-native";
-
-type Props = TextProps & {
-  text: string | number;
-  color?: string;
-  currency?: boolean;
-  weight?: "normal" | "medium";
-  fontSize?: "s" | "m" | "l" | "xl";
-  textTransform?: TextStyle["textTransform"];
-};
+import type { Props } from "./Text.types";
 
 function Text({
   text,

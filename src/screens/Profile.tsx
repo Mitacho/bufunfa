@@ -1,8 +1,8 @@
 import React, { useContext, useCallback } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 
-import { Button } from "@components/atoms/button";
-import { InputField } from "@components/molecules/form";
+import { Button } from "@components/atoms";
+import { InputField } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
 import { ProfileContext } from "@context/ProfileContext";

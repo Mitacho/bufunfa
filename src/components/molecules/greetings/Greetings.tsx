@@ -2,11 +2,9 @@ import React, { useContext, memo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { ThemeContext } from "@styles/theme/context";
 import { ProfileContext } from "@context/ProfileContext";
-import Text from "@components/atoms/typography/Text";
+import { Text } from "@components/atoms";
 
-type Props = {
-  onNavigate: () => void;
-};
+import type { Props } from "./Greetings.types";
 
 function Greetings({ onNavigate }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);

@@ -1,13 +1,10 @@
 import React, { useContext, memo } from "react";
-import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { ThemeContext } from "@styles/theme/context";
 
-import type { TouchableOpacityProps } from "react-native";
+import { styles } from "./Button.styles";
 
-type Props = TouchableOpacityProps & {
-  text: string;
-  color: string;
-};
+import type { Props } from "./Button.types";
 
 function Button({ text, color, ...props }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
@@ -26,18 +23,5 @@ function Button({ text, color, ...props }: Props): JSX.Element {
     </TouchableOpacity>
   );
 }
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: "Poppins",
-    textAlign: "center",
-  },
-  button: {
-    width: "100%",
-    height: 60,
-    borderRadius: 4,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
 
 export default memo(Button);

@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 
-import { InputField } from "@components/molecules/form";
+import { InputField } from "@components/molecules";
 import { ThemeContext } from "@styles/theme/context";
 
 import type { ScreenProps } from "@types";
