@@ -11,11 +11,12 @@ type Props = {
 };
 
 let saveTimeout: NodeJS.Timeout;
+const USERNAME_ASYNCSTORAGE_KEY: string = "@name";
 
 export const ProfileContext = createContext({} as ProfileContextData);
 
 export default function ProfileProvider({ children }: Props): JSX.Element {
-  const [name, setName] = useState("");
+  const [name, setName] = useState<string>("");
 
   const handleChangeName = useCallback((name: string) => {
     setName(name);
@@ -34,7 +35,7 @@ export default function ProfileProvider({ children }: Props): JSX.Element {
 
   const saveUsername = useCallback(async (name: string) => {
     try {
-      await AsyncStorage.setItem("@name", name);
+      await AsyncStorage.setItem(USERNAME_ASYNCSTORAGE_KEY, name);
 
       clearTimeout(saveTimeout);
     } catch (error) {
@@ -46,9 +47,7 @@ export default function ProfileProvider({ children }: Props): JSX.Element {
     try {
       const username = await AsyncStorage.getItem("@name");
 
-      if (username) {
-        setName(username);
-      }
+      username && setName(username);
     } catch (error) {
       console.error(error);
     }
