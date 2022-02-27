@@ -20,6 +20,7 @@ export default function NewTransactionScreen({}: ScreenProps<"NewTransaction">):
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
+        {/* TODO: convert to organism */}
         <View
           style={[
             { padding: theme.spacing.m, justifyContent: "space-evenly" },
