@@ -14,7 +14,7 @@ import type { Props } from "./BalanceCard.types";
 function AmountCard({ amount }: Props) {
   const { theme } = useContext(ThemeContext);
   return (
-    <Card style={{ marginVertical: theme.spacing.xs }}>
+    <Card style={[styles.card]}>
       <View style={[styles.cardHeader]}>
         <Text
           text="Saldo na sua carteira"
@@ -27,13 +27,7 @@ function AmountCard({ amount }: Props) {
           variant="right"
         />
       </View>
-      <View
-        style={[
-          styles.amount,
-          {
-            marginTop: theme.spacing.l,
-          },
-        ]}>
+      <View style={[styles.amount]}>
         <Text
           text={amount}
           currency

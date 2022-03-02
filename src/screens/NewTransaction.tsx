@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { InputField } from "@components/molecules";
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import type { ScreenProps } from "@types";
 
@@ -11,7 +12,7 @@ export default function NewTransactionScreen({}: ScreenProps<"NewTransaction">):
 
   const INPUT_FIELD_STYLE = useMemo(
     () => ({
-      marginTop: theme.spacing.m,
+      marginTop: themeConstants.spacing.m,
     }),
     [],
   );
@@ -23,7 +24,10 @@ export default function NewTransactionScreen({}: ScreenProps<"NewTransaction">):
         {/* TODO: convert to organism */}
         <View
           style={[
-            { padding: theme.spacing.m, justifyContent: "space-evenly" },
+            {
+              padding: themeConstants.spacing.m,
+              justifyContent: "space-evenly",
+            },
           ]}>
           <InputField label="Título" />
           <InputField

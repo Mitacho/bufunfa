@@ -48,19 +48,6 @@ const light: Theme = {
     buttonSecondary: palette.purplePrimary,
     buttonTertiary: palette.purplePrimary,
   },
-  spacing: {
-    xs: 8,
-    s: 16,
-    m: 20,
-    l: 24,
-    xl: 40,
-  },
-  fontSize: {
-    s: 8,
-    m: 16,
-    l: 24,
-    xl: 32,
-  },
 };
 
 export default light;

@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Icon, Circle } from "@components/atoms";
 
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import {
   DonateIcon,
@@ -38,7 +39,7 @@ function ColoredCircleIcon({
     <View
       style={[
         styles.container,
-        { marginRight: variant === "left" ? theme.spacing.s : 0 },
+        { marginRight: variant === "left" ? themeConstants.spacing.s : 0 },
       ]}>
       <Circle
         height={circleSize || 40}

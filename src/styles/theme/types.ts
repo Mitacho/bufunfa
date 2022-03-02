@@ -4,21 +4,6 @@ export type Palette = {
   [key: string]: string;
 };
 
-export type Spacing = {
-  s: number;
-  xs: number;
-  m: number;
-  l: number;
-  xl: number;
-};
-
-export type FontSize = {
-  s: number;
-  m: number;
-  l: number;
-  xl: number;
-};
-
 export type Colors = {
   statusBar: string;
   statusBarContent: StatusBarStyle | null | undefined;
@@ -53,6 +38,4 @@ export type Colors = {
 export type Theme = {
   title: "light" | "dark";
   colors: Colors;
-  spacing: Spacing;
-  fontSize: FontSize;
 };

@@ -4,6 +4,8 @@ import { ThemeContext } from "@styles/theme/context";
 import { ProfileContext } from "@context/ProfileContext";
 import { Text } from "@components/atoms";
 
+import themeConstants from "@styles/theme/constants";
+
 import type { Props } from "./Greetings.types";
 
 function Greetings({ onNavigate }: Props): JSX.Element {
@@ -11,7 +13,7 @@ function Greetings({ onNavigate }: Props): JSX.Element {
   const { name } = useContext(ProfileContext);
 
   return (
-    <View style={[{ paddingVertical: theme.spacing.l }]}>
+    <View style={[{ paddingVertical: themeConstants.spacing.l }]}>
       <TouchableOpacity onPress={onNavigate}>
         <Text
           text={name ? `Olá, ${name}!` : "Olá! Qual é o seu nome ?"}

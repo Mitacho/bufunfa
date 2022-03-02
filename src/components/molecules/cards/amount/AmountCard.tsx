@@ -38,10 +38,8 @@ function AmountCard({ amount, title, type }: Props) {
 
   return (
     <TouchableOpacity onPress={handleNavigate}>
-      <Card
-        color={getColor[type]}
-        style={{ flexDirection: "row", marginVertical: theme.spacing.xs }}>
-        <View style={[styles.cardHeader, { marginRight: theme.spacing.s }]}>
+      <Card color={getColor[type]} style={styles.card}>
+        <View style={styles.cardHeader}>
           <ColoredCircleIcon
             icon={type}
             circleSize={36}

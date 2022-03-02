@@ -7,6 +7,8 @@ import { InputField } from "@components/molecules";
 import { ThemeContext } from "@styles/theme/context";
 import { ProfileContext } from "@context/ProfileContext";
 
+import themeConstants from "@styles/theme/constants";
+
 import type { ScreenProps } from "@types";
 
 export default function ProfileScreen({}: ScreenProps<"Profile">): JSX.Element {
@@ -21,7 +23,7 @@ export default function ProfileScreen({}: ScreenProps<"Profile">): JSX.Element {
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={[{ padding: theme.spacing.l }]}>
+        <View style={[{ padding: themeConstants.spacing.l }]}>
           <InputField
             placeholder="Como você se chama ?"
             value={name}

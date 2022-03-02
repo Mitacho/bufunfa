@@ -3,13 +3,14 @@ import { View } from "react-native";
 import { BalanceCard, AmountCard } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import type { Props } from "./Overview.types";
 
 function Overview(props: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
   return (
-    <View style={[{ marginHorizontal: theme.spacing.m }]}>
+    <View style={[{ marginHorizontal: themeConstants.spacing.m }]}>
       <BalanceCard amount={3000} />
       <AmountCard type="income" amount={1800.49} title="Entradas" />
       <AmountCard type="expense" amount={1.5} title="Saídas" />

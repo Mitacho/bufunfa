@@ -24,7 +24,6 @@ function Input({
         {
           backgroundColor: theme.colors.input,
           color: theme.colors.textInput,
-          fontSize: theme.fontSize.m,
           height: !props.multiline ? 60 : undefined,
           textAlignVertical: !props.multiline ? "center" : "top",
         },

@@ -4,6 +4,7 @@ import { SafeAreaView, ScrollView, View } from "react-native";
 import { Greetings } from "@components/molecules";
 import { Overview } from "@components/organisms";
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import type { ScreenProps } from "@types";
 
@@ -20,7 +21,7 @@ export default function HomeScreen({
     <SafeAreaView
       style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View style={[{ padding: theme.spacing.m }]}>
+        <View style={[{ padding: themeConstants.spacing.m }]}>
           <Greetings onNavigate={handleNavigateToProfile} />
         </View>
         <Overview />

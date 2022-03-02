@@ -2,6 +2,7 @@ import React, { memo, useContext } from "react";
 import { View } from "react-native";
 
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import type { Props } from "./Card.types";
 
@@ -11,10 +12,10 @@ function Card({ children, style, color }: Props) {
     <View
       style={[
         {
-          padding: theme.spacing.m,
+          padding: themeConstants.spacing.m,
           backgroundColor: color || theme.colors.cardBalance,
           width: "100%",
-          borderRadius: 8,
+          borderRadius: themeConstants.borderRadius.m,
         },
         style,
       ]}>

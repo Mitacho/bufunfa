@@ -1,6 +1,7 @@
 import React, { memo, useMemo, useContext } from "react";
 import { Text as TextBase } from "react-native";
 import { ThemeContext } from "@styles/theme/context";
+import themeConstants from "@styles/theme/constants";
 
 import type { Props } from "./Text.types";
 
@@ -24,10 +25,10 @@ function Text({
   );
 
   const memoizedFontSize = {
-    s: theme.fontSize.s,
-    m: theme.fontSize.m,
-    l: theme.fontSize.l,
-    xl: theme.fontSize.xl,
+    s: themeConstants.fontSize.s,
+    m: themeConstants.fontSize.m,
+    l: themeConstants.fontSize.l,
+    xl: themeConstants.fontSize.xl,
   };
 
   return (

@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
+import themeConstants from "@styles/theme/constants";
 
 const styles = StyleSheet.create({
+  card: {
+    marginVertical: themeConstants.spacing.xs,
+  },
   cardHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -9,6 +13,7 @@ const styles = StyleSheet.create({
   },
   amount: {
     justifyContent: "center",
+    marginTop: themeConstants.spacing.l,
   },
 });
 
