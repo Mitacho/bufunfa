@@ -1,13 +1,11 @@
-import React, { memo, useCallback, useContext } from "react";
-import { TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React, { memo, useContext } from "react";
+import { View } from "react-native";
 
 import { Card, Text } from "@components/atoms";
 import { ColoredCircleIcon } from "@components/molecules";
 
 import { ThemeContext } from "@styles/theme/context";
 
-import type { NavigationScreenProps } from "@types";
 import type { Props } from "./AmountCard.types";
 
 import styles from "./AmountCard.styles";
@@ -15,12 +13,7 @@ import styles from "./AmountCard.styles";
 const CIRCLE_COLOR_OPACITY = "aa";
 
 function AmountCard({ amount, title, type }: Props) {
-  const navigation = useNavigation<NavigationScreenProps<"NewTransaction">>();
   const { theme } = useContext(ThemeContext);
-
-  const handleNavigate = useCallback(() => {
-    navigation.navigate("NewTransaction");
-  }, []);
 
   const getColor = {
     income: theme.colors.cardIncome,
@@ -37,28 +30,26 @@ function AmountCard({ amount, title, type }: Props) {
   };
 
   return (
-    <TouchableOpacity onPress={handleNavigate}>
-      <Card color={getColor[type]} style={styles.card}>
-        <View style={styles.cardHeader}>
-          <ColoredCircleIcon
-            icon={type}
-            circleSize={36}
-            circleColor={getCircleColor[type] + CIRCLE_COLOR_OPACITY}
-          />
-        </View>
-        <View style={[styles.amount]}>
-          <Text text={title} fontSize="m" color={theme.colors.cardText} />
-          <Text
-            text={amount}
-            currency
-            weight="medium"
-            fontSize="l"
-            color={theme.colors.cardAmount}
-            numberOfLines={1}
-          />
-        </View>
-      </Card>
-    </TouchableOpacity>
+    <Card color={getColor[type]} style={styles.card}>
+      <View style={styles.cardHeader}>
+        <ColoredCircleIcon
+          icon={type}
+          circleSize={36}
+          circleColor={getCircleColor[type] + CIRCLE_COLOR_OPACITY}
+        />
+      </View>
+      <View style={[styles.amount]}>
+        <Text text={title} fontSize="m" color={theme.colors.cardText} />
+        <Text
+          text={amount}
+          currency
+          weight="medium"
+          fontSize="l"
+          color={theme.colors.cardAmount}
+          numberOfLines={1}
+        />
+      </View>
+    </Card>
   );
 }
 
