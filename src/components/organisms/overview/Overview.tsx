@@ -28,14 +28,11 @@ function Overview(props: Props): JSX.Element {
       <AmountCard type="debt" amount={0} title="Dívidas" />
       <Button
         text="Nova transação"
-        color={theme.colors.cardBalance}
-        textColor={theme.colors.textSecondary}
-        variant="dashed"
+        color={theme.colors.buttonPrimary}
         style={{
           marginBottom: themeConstants.spacing.m,
-          marginTop: themeConstants.spacing.xs,
+          marginTop: themeConstants.spacing.xl,
         }}
-        height={90}
         onPress={handleNavigate}
       />
     </View>
