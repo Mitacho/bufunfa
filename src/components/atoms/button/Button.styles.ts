@@ -17,4 +17,8 @@ export const styles = StyleSheet.create({
     borderWidth: 2,
     borderStyle: "dashed",
   },
+  transparentButton: {
+    backgroundColor: "none",
+    borderWidth: 0,
+  },
 });
