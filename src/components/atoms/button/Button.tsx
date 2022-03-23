@@ -1,11 +1,8 @@
-import React, { useContext, memo, useMemo } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-
-import { ThemeContext } from "@styles/theme/context";
-
-import { styles } from "./Button.styles";
-
-import type { ButtonVariant, ButtonVariants, Props } from "./Button.types";
+import { ThemeContext } from '@styles/theme/context';
+import React, { memo, useContext, useMemo } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { styles } from './Button.styles';
+import type { ButtonVariant, ButtonVariants, Props } from './Button.types';
 
 function Button({
   text,
@@ -36,7 +33,6 @@ function Button({
           variant
             ? { ...buttonVariants[variant], borderColor: color }
             : { backgroundColor: color },
-          ,
         ]}>
         <Text
           style={[
@@ -44,7 +40,7 @@ function Button({
             {
               color: variant
                 ? textColor || theme.colors.text
-                : textColor || "#171717",
+                : textColor || '#171717',
             },
           ]}>
           {text}

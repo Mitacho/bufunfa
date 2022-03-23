@@ -1,9 +1,9 @@
 import {
-  NativeStackScreenProps,
   NativeStackNavigationProp,
-} from "@react-navigation/native-stack";
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
-export type Screens = "Home" | "Profile" | "NewTransaction";
+export type Screens = 'Home' | 'Profile' | 'NewTransaction';
 export type StackParamList = {
   Home: undefined;
   Profile: undefined;

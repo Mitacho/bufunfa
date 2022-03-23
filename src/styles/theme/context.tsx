@@ -1,10 +1,8 @@
-import React, { createContext, useState, useCallback, useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
-import light from "./light";
-import dark from "./dark";
-
-import type { Theme } from "./types";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
+import dark from './dark';
+import light from './light';
+import type { Theme } from './types';
 
 export type ThemeContextData = {
   theme: Theme;
@@ -15,7 +13,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const DARKMODE_ASYNCSTORAGE_KEY: string = "@darkMode";
+const DARKMODE_ASYNCSTORAGE_KEY: string = '@darkMode';
 
 export const ThemeContext = createContext({} as ThemeContextData);
 
@@ -25,7 +23,7 @@ export default function ThemeProvider({ children }: Props): JSX.Element {
   const getStoredTheme = useCallback(async (): Promise<void> => {
     try {
       setDarkMode(
-        (await AsyncStorage.getItem(DARKMODE_ASYNCSTORAGE_KEY)) === "true",
+        (await AsyncStorage.getItem(DARKMODE_ASYNCSTORAGE_KEY)) === 'true',
       );
     } catch (error) {
       console.error(error);
@@ -47,10 +45,11 @@ export default function ThemeProvider({ children }: Props): JSX.Element {
       saveCurrentTheme(newValue);
       return newValue;
     });
-  }, []);
+  }, [saveCurrentTheme]);
 
   useEffect(() => {
     getStoredTheme();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

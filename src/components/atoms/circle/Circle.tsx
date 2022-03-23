@@ -1,9 +1,7 @@
-import React, { memo, useContext } from "react";
-import { View } from "react-native";
-
-import { ThemeContext } from "@styles/theme/context";
-
-import type { Props } from "./Circle.types";
+import { ThemeContext } from '@styles/theme/context';
+import React, { memo, useContext } from 'react';
+import { View } from 'react-native';
+import type { Props } from './Circle.types';
 
 function Circle({ height = 24, width = 24, color, style }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);

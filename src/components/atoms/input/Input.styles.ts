@@ -1,12 +1,12 @@
-import { StyleSheet } from "react-native";
-import themeConstants from "@styles/theme/constants";
+import themeConstants from '@styles/theme/constants';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: "Poppins",
+    fontFamily: 'Poppins',
   },
   input: {
-    width: "100%",
+    width: '100%',
     borderRadius: 4,
     fontSize: themeConstants.fontSize.m,
   },

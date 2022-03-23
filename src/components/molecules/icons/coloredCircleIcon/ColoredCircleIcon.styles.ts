@@ -1,17 +1,17 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
   },
   circleLeft: {
-    position: "absolute",
+    position: 'absolute',
     left: -6,
   },
   circleRight: {
-    position: "absolute",
+    position: 'absolute',
     right: 10,
   },
 });

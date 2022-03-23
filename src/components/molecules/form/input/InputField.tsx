@@ -1,8 +1,7 @@
-import React from "react";
-import { FormControl, Input } from "@components/atoms";
-import { FormLabel } from "@components/molecules";
-
-import type { Props } from "./InputField.types";
+import { FormControl, Input } from '@components/atoms';
+import { FormLabel } from '@components/molecules';
+import React from 'react';
+import type { Props } from './InputField.types';
 
 function InputField({
   label,
@@ -12,9 +11,6 @@ function InputField({
   value,
   onChangeText,
   marginTop,
-  marginBottom,
-  paddingTop,
-  paddingBottom,
   ...props
 }: Props): JSX.Element {
   return (

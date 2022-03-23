@@ -1,16 +1,12 @@
-import React, { memo, useContext } from "react";
-import { View } from "react-native";
+import { Card, Text } from '@components/atoms';
+import { ColoredCircleIcon } from '@components/molecules';
+import { ThemeContext } from '@styles/theme/context';
+import React, { memo, useContext } from 'react';
+import { View } from 'react-native';
+import styles from './AmountCard.styles';
+import type { Props } from './AmountCard.types';
 
-import { Card, Text } from "@components/atoms";
-import { ColoredCircleIcon } from "@components/molecules";
-
-import { ThemeContext } from "@styles/theme/context";
-
-import type { Props } from "./AmountCard.types";
-
-import styles from "./AmountCard.styles";
-
-const CIRCLE_COLOR_OPACITY = "aa";
+const CIRCLE_COLOR_OPACITY = 'aa';
 
 function AmountCard({ amount, title, type }: Props) {
   const { theme } = useContext(ThemeContext);

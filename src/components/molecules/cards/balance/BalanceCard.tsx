@@ -1,15 +1,10 @@
-import React, { memo, useContext } from "react";
-import { View } from "react-native";
-
-import { Card, Text } from "@components/atoms";
-
-import { ThemeContext } from "@styles/theme/context";
-
-import { ColoredCircleIcon } from "@components/molecules";
-
-import styles from "./BalanceCard.styles";
-
-import type { Props } from "./BalanceCard.types";
+import { Card, Text } from '@components/atoms';
+import { ColoredCircleIcon } from '@components/molecules';
+import { ThemeContext } from '@styles/theme/context';
+import React, { memo, useContext } from 'react';
+import { View } from 'react-native';
+import styles from './BalanceCard.styles';
+import type { Props } from './BalanceCard.types';
 
 function AmountCard({ amount }: Props) {
   const { theme } = useContext(ThemeContext);
@@ -23,7 +18,7 @@ function AmountCard({ amount }: Props) {
         />
         <ColoredCircleIcon
           icon="wallet"
-          circleColor={theme.colors.blue + "aa"}
+          circleColor={theme.colors.blue + 'aa'}
           variant="right"
         />
       </View>

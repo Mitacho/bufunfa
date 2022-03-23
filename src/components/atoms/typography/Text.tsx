@@ -1,15 +1,14 @@
-import React, { memo, useMemo, useContext } from "react";
-import { Text as TextBase } from "react-native";
-import { ThemeContext } from "@styles/theme/context";
-import themeConstants from "@styles/theme/constants";
-
-import type { Props } from "./Text.types";
+import themeConstants from '@styles/theme/constants';
+import { ThemeContext } from '@styles/theme/context';
+import React, { memo, useContext, useMemo } from 'react';
+import { Text as TextBase } from 'react-native';
+import type { Props } from './Text.types';
 
 function Text({
   text,
   currency,
-  weight = "normal",
-  fontSize = "m",
+  weight = 'normal',
+  fontSize = 'm',
   color,
   textTransform,
   ...props
@@ -18,8 +17,8 @@ function Text({
 
   const memoizedFontWeight = useMemo(
     () => ({
-      normal: "Poppins",
-      medium: "Poppins-Medium",
+      normal: 'Poppins',
+      medium: 'Poppins-Medium',
     }),
     [],
   );
@@ -43,9 +42,9 @@ function Text({
         },
       ]}>
       {currency
-        ? Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
+        ? Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
           }).format(parseFloat(String(text)))
         : text}
     </TextBase>

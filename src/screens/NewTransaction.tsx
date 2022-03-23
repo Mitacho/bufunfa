@@ -1,13 +1,11 @@
-import React, { useContext, useMemo } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { InputField } from '@components/molecules';
+import themeConstants from '@styles/theme/constants';
+import { ThemeContext } from '@styles/theme/context';
+import type { ScreenProps } from '@types';
+import React, { useContext, useMemo } from 'react';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 
-import { InputField } from "@components/molecules";
-import { ThemeContext } from "@styles/theme/context";
-import themeConstants from "@styles/theme/constants";
-
-import type { ScreenProps } from "@types";
-
-export default function NewTransactionScreen({}: ScreenProps<"NewTransaction">): JSX.Element {
+export default function NewTransactionScreen({}: ScreenProps<'NewTransaction'>): JSX.Element {
   const { theme } = useContext(ThemeContext);
 
   const INPUT_FIELD_STYLE = useMemo(
@@ -19,14 +17,14 @@ export default function NewTransactionScreen({}: ScreenProps<"NewTransaction">):
 
   return (
     <SafeAreaView
-      style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
+      style={[{ height: '100%', backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         {/* TODO: convert to organism */}
         <View
           style={[
             {
               padding: themeConstants.spacing.m,
-              justifyContent: "space-evenly",
+              justifyContent: 'space-evenly',
             },
           ]}>
           <InputField label="Título" />

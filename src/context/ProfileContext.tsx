@@ -1,5 +1,5 @@
-import React, { createContext, useCallback, useEffect, useState } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 type ProfileContextData = {
   name: string;
@@ -11,31 +11,16 @@ type Props = {
 };
 
 let saveTimeout: NodeJS.Timeout;
-const USERNAME_ASYNCSTORAGE_KEY: string = "@name";
+const USERNAME_ASYNCSTORAGE_KEY: string = '@name';
 
 export const ProfileContext = createContext({} as ProfileContextData);
 
 export default function ProfileProvider({ children }: Props): JSX.Element {
-  const [name, setName] = useState<string>("");
+  const [name, setName] = useState<string>('');
 
-  const handleChangeName = useCallback((name: string) => {
-    setName(name);
-    autoSaveName(name);
-  }, []);
-
-  const autoSaveName = useCallback((name: string) => {
-    if (saveTimeout) {
-      clearTimeout(saveTimeout);
-    }
-
-    saveTimeout = setTimeout(() => {
-      saveUsername(name);
-    }, 3000);
-  }, []);
-
-  const saveUsername = useCallback(async (name: string) => {
+  const saveUsername = useCallback(async (newName: string) => {
     try {
-      await AsyncStorage.setItem(USERNAME_ASYNCSTORAGE_KEY, name);
+      await AsyncStorage.setItem(USERNAME_ASYNCSTORAGE_KEY, newName);
 
       clearTimeout(saveTimeout);
     } catch (error) {
@@ -43,9 +28,30 @@ export default function ProfileProvider({ children }: Props): JSX.Element {
     }
   }, []);
 
+  const autoSaveName = useCallback(
+    (newName: string) => {
+      if (saveTimeout) {
+        clearTimeout(saveTimeout);
+      }
+
+      saveTimeout = setTimeout(() => {
+        saveUsername(newName);
+      }, 3000);
+    },
+    [saveUsername],
+  );
+
+  const handleChangeName = useCallback(
+    (newName: string) => {
+      setName(newName);
+      autoSaveName(newName);
+    },
+    [autoSaveName],
+  );
+
   const getUsername = useCallback(async () => {
     try {
-      const username = await AsyncStorage.getItem("@name");
+      const username = await AsyncStorage.getItem('@name');
 
       username && setName(username);
     } catch (error) {
@@ -55,6 +61,7 @@ export default function ProfileProvider({ children }: Props): JSX.Element {
 
   useEffect(() => {
     getUsername();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

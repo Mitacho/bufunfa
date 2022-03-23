@@ -1,27 +1,23 @@
-import React, { useContext, useCallback } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { Button } from '@components/atoms';
+import { InputField } from '@components/molecules';
+import { ProfileContext } from '@context/ProfileContext';
+import themeConstants from '@styles/theme/constants';
+import { ThemeContext } from '@styles/theme/context';
+import type { ScreenProps } from '@types';
+import React, { useCallback, useContext } from 'react';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 
-import { Button } from "@components/atoms";
-import { InputField } from "@components/molecules";
-
-import { ThemeContext } from "@styles/theme/context";
-import { ProfileContext } from "@context/ProfileContext";
-
-import themeConstants from "@styles/theme/constants";
-
-import type { ScreenProps } from "@types";
-
-export default function ProfileScreen({}: ScreenProps<"Profile">): JSX.Element {
+export default function ProfileScreen({}: ScreenProps<'Profile'>): JSX.Element {
   const { theme, handleChangeTheme } = useContext(ThemeContext);
   const { name, handleChangeName } = useContext(ProfileContext);
 
   const onPressChangeTheme = useCallback(() => {
     handleChangeTheme();
-  }, []);
+  }, [handleChangeTheme]);
 
   return (
     <SafeAreaView
-      style={[{ height: "100%", backgroundColor: theme.colors.background }]}>
+      style={[{ height: '100%', backgroundColor: theme.colors.background }]}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={[{ padding: themeConstants.spacing.l }]}>
           <InputField

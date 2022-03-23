@@ -1,22 +1,18 @@
-import React, { useContext, memo } from "react";
-import { TouchableOpacity, View } from "react-native";
-import { ThemeContext } from "@styles/theme/context";
-import { ProfileContext } from "@context/ProfileContext";
-import { Text } from "@components/atoms";
-
-import themeConstants from "@styles/theme/constants";
-
-import type { Props } from "./Greetings.types";
+import { Text } from '@components/atoms';
+import { ProfileContext } from '@context/ProfileContext';
+import themeConstants from '@styles/theme/constants';
+import React, { memo, useContext } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import type { Props } from './Greetings.types';
 
 function Greetings({ onNavigate }: Props): JSX.Element {
-  const { theme } = useContext(ThemeContext);
   const { name } = useContext(ProfileContext);
 
   return (
     <View style={[{ paddingVertical: themeConstants.spacing.l }]}>
       <TouchableOpacity onPress={onNavigate}>
         <Text
-          text={name ? `Olá, ${name}!` : "Olá! Qual é o seu nome ?"}
+          text={name ? `Olá, ${name}!` : 'Olá! Qual é o seu nome ?'}
           weight="medium"
           fontSize="l"
         />

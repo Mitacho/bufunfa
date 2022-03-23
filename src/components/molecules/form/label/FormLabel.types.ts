@@ -1,7 +1,7 @@
-import type { TextStyle } from "react-native";
+import type { TextStyle } from 'react-native';
 
 export type Props = {
   label: string;
   uppercase?: boolean;
-  textTransform?: TextStyle["textTransform"];
+  textTransform?: TextStyle['textTransform'];
 };

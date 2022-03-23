@@ -1,9 +1,8 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-
-import App from "./App";
-import ThemeProvider from "@styles/theme/context";
-import ProfileProvider from "@context/ProfileContext";
+import ProfileProvider from '@context/ProfileContext';
+import { NavigationContainer } from '@react-navigation/native';
+import ThemeProvider from '@styles/theme/context';
+import React from 'react';
+import App from './App';
 
 export default function AppIndex(): JSX.Element {
   return (

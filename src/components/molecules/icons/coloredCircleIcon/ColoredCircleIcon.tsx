@@ -1,21 +1,17 @@
-import React, { useContext } from "react";
-import { View } from "react-native";
-import { Icon, Circle } from "@components/atoms";
-
-import { ThemeContext } from "@styles/theme/context";
-import themeConstants from "@styles/theme/constants";
-
 import {
+  CreditCardIcon,
   DonateIcon,
   ReceiveMoneyIcon,
-  CreditCardIcon,
   SavingIcon,
   WalletIcon,
-} from "@assets/icons";
-
-import styles from "./ColoredCircleIcon.styles";
-
-import type { Props } from "./ColoredCircleIcon.types";
+} from '@assets/icons';
+import { Circle, Icon } from '@components/atoms';
+import themeConstants from '@styles/theme/constants';
+import { ThemeContext } from '@styles/theme/context';
+import React, { useContext } from 'react';
+import { View } from 'react-native';
+import styles from './ColoredCircleIcon.styles';
+import type { Props } from './ColoredCircleIcon.types';
 
 const getIcon = {
   income: SavingIcon,
@@ -39,13 +35,13 @@ function ColoredCircleIcon({
     <View
       style={[
         styles.container,
-        { marginRight: variant === "left" ? themeConstants.spacing.s : 0 },
+        { marginRight: variant === 'left' ? themeConstants.spacing.s : 0 },
       ]}>
       <Circle
         height={circleSize || 40}
         width={circleSize || 40}
         style={
-          variant === "right"
+          variant === 'right'
             ? styles.circleRight
             : styles.circleLeft || styles.circleLeft
         }

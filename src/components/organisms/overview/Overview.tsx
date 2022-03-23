@@ -1,23 +1,20 @@
-import React, { memo, useCallback, useContext } from "react";
-import { View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Button } from '@components/atoms';
+import { AmountCard, BalanceCard } from '@components/molecules';
+import { useNavigation } from '@react-navigation/native';
+import themeConstants from '@styles/theme/constants';
+import { ThemeContext } from '@styles/theme/context';
+import type { NavigationScreenProps } from '@types';
+import React, { memo, useCallback, useContext } from 'react';
+import { View } from 'react-native';
+import type { Props } from './Overview.types';
 
-import { BalanceCard, AmountCard } from "@components/molecules";
-import { Button } from "@components/atoms";
-
-import { ThemeContext } from "@styles/theme/context";
-import themeConstants from "@styles/theme/constants";
-
-import type { Props } from "./Overview.types";
-import type { NavigationScreenProps } from "@types";
-
-function Overview(props: Props): JSX.Element {
+function Overview(_: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);
-  const navigation = useNavigation<NavigationScreenProps<"NewTransaction">>();
+  const navigation = useNavigation<NavigationScreenProps<'NewTransaction'>>();
 
   const handleNavigate = useCallback(() => {
-    navigation.navigate("NewTransaction");
-  }, []);
+    navigation.navigate('NewTransaction');
+  }, [navigation]);
 
   return (
     <View style={[{ marginHorizontal: themeConstants.spacing.m }]}>

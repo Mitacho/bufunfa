@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-
-import { Text } from "@components/atoms";
-
-import { ThemeContext } from "@styles/theme/context";
-
-import type { Props } from "./FormLabel.types";
+import { Text } from '@components/atoms';
+import { ThemeContext } from '@styles/theme/context';
+import React, { useContext } from 'react';
+import type { Props } from './FormLabel.types';
 
 function FormLabel({ label, textTransform }: Props): JSX.Element {
   const { theme } = useContext(ThemeContext);

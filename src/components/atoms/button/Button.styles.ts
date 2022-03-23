@@ -1,24 +1,24 @@
-import { StyleSheet } from "react-native";
-import themeConstants from "@styles/theme/constants";
+import themeConstants from '@styles/theme/constants';
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   text: {
-    fontFamily: "Poppins",
-    textAlign: "center",
+    fontFamily: 'Poppins',
+    textAlign: 'center',
     fontSize: themeConstants.fontSize.m,
   },
   button: {
-    width: "100%",
+    width: '100%',
     borderRadius: themeConstants.borderRadius.s,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   dashedButton: {
     borderWidth: 2,
-    borderStyle: "dashed",
+    borderStyle: 'dashed',
   },
   transparentButton: {
-    backgroundColor: "none",
+    backgroundColor: 'none',
     borderWidth: 0,
   },
 });

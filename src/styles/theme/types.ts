@@ -1,4 +1,4 @@
-import type { StatusBarStyle } from "react-native";
+import type { StatusBarStyle } from 'react-native';
 
 export type Palette = {
   [key: string]: string;
@@ -36,6 +36,6 @@ export type Colors = {
 };
 
 export type Theme = {
-  title: "light" | "dark";
+  title: 'light' | 'dark';
   colors: Colors;
 };

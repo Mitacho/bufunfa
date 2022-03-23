@@ -1,4 +1,4 @@
-import type { StyleProp, ViewStyle, ViewProps } from "react-native";
+import type { StyleProp, ViewProps, ViewStyle } from 'react-native';
 
 export type Props = ViewProps & {
   children?: React.ReactNode;
